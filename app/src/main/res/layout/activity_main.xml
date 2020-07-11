@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="videoModel"
+            type="com.jddeep.videocompressor.models.VideoModel" />
+    </data>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <VideoView
+                android:id="@+id/ogVideoView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:context=".MainActivity">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+            <Button
+                android:id="@+id/pickVideoBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@={videoModel.buttonText}" />
+
+            <EditText
+                android:id="@+id/bitrateET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter new bitrate"
+                android:inputType="numberDecimal"
+                android:text="@={videoModel.compressBitrate}" />
+
+            <Button
+                android:id="@+id/compressVidBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="8dp"
+                android:text="@={videoModel.compressButtonText}" />
+
+            <ProgressBar
+                android:id="@+id/compressPB"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:visibility="gone" />
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+</layout>
